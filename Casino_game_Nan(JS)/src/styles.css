@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+}
+.range_number {
+  /* -webkit-appearance: none; */
+  /* width: 100%; */
+  /* background-color: burlywood; */
+  display: block;
+}
+.guess_number {
+  display: flex;
+}
+.guess_submit {
+  width: 50px;
+  margin: 0px 5px;
+}
+.result-title__text {
+  font-weight: 600;
+}
