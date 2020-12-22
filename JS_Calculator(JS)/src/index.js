@@ -35,7 +35,6 @@ function saveNumValue(numValue) {
   localStorage.setItem(FIRST_NUM_LS, numValue);
   span.innerText = numValue;
 }
-// 결과값 출력
 function showMeValue(event) {
   event.preventDefault();
   const getFirstNum = localStorage.getItem(FIRST_NUM_LS);
@@ -60,8 +59,6 @@ function showMeValue(event) {
     saveNumValue(numValue);
   }
 }
-/* 사칙연산 기호에 class "on"을 추가하고 나머지엔 제거 하는 식으로 토글
-첫 번째 값이 저장된 배열의 값을 string "toggle"로 바꿔서 두 번째 배열에 넣기*/
 function calculatorDivision(event) {
   event.preventDefault();
   firstNumArr = "toggle";
@@ -72,11 +69,22 @@ function calculatorDivision(event) {
 }
 function calculatorMult(event) {
   event.preventDefault();
-  firstNumArr = "toggle";
-  calMult.classList.add("on");
-  calPlus.classList.remove("on");
-  calMinus.classList.remove("on");
-  calDivison.classList.remove("on");
+  const getFirstNum = localStorage.getItem(FIRST_NUM_LS);
+  const getSecondNum = localStorage.getItem(SECOND_NUM_LS);
+  const firstNum = parseFloat(getFirstNum);
+  const secondNum = parseFloat(getSecondNum);
+  if (firstNum % 2 === 0 && secondNum === 2) {
+    const twoTwo = firstNum * secondNum;
+    span.innerText = twoTwo;
+    localStorage.setItem(FIRST_NUM_LS, twoTwo);
+    secondNumArr = [];
+  } else {
+    firstNumArr = "toggle";
+    calMult.classList.add("on");
+    calPlus.classList.remove("on");
+    calMinus.classList.remove("on");
+    calDivison.classList.remove("on");
+  }
 }
 function calculatorMinus(event) {
   event.preventDefault();
@@ -104,10 +112,6 @@ function saveSecondNumber(secondNum) {
 function saveFirstNumber(firstNum) {
   localStorage.setItem(FIRST_NUM_LS, firstNum);
 }
-function calculatorSecond(event) {
-  event.preventDefault();
-}
-// 버튼을 누르면 숫자가 입력된다
 function calculatorInput(event) {
   event.preventDefault();
   if (firstNumArr !== "toggle") {
