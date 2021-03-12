@@ -44,5 +44,26 @@ const getNewTimeStamp = (): number => Math.round(new Date().getTime() / 1000);
 // Math.floor() : 소수점 이하를 버림한다.
 // Math.ceil() : 소수점 이하를 올림한다.
 // Math.round() : 소수점 이하를 반올림한다.
+const createNewBlock = (data: string): Block => {
+  const previousBlock: Block = getLastBlockchain();
+  const newIndex: number = previousBlock.index + 1;
+  const newTimestamp: number = getNewTimeStamp();
+  const newHash: string = Block.calculateBlockHash(
+    newIndex,
+    previousBlock.hash,
+    newTimestamp,
+    data
+  );
+  const newBlock: Block = new Block(
+    newIndex,
+    newHash,
+    previousBlock.hash,
+    data,
+    newTimestamp
+  );
+  return newBlock;
+};
+// 결과의 인덱스가 0, 1 이런식으로 나오는 것이 아닌 최종 인덱스가 통합되서 나온다.
+console.log(createNewBlock("Hi!!"), createNewBlock("Bye~~"));
 
 export {};
