@@ -1,22 +1,28 @@
-class Human {
-  public name: string;
-  public age: number;
-  public gender: string;
-  constructor(name: string, age: number, gender: string) {
-    // 클래스가 시작할 때마다 호출되는 method
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+// TypeScript로 블록체인 만들기
+class Block {
+  public index: number;
+  public hash: string;
+  public previousHash: string; // 이전 해쉬
+  public data: string;
+  public timestamp: number;
+  constructor(
+    index: number,
+    hash: string,
+    previousHash: string,
+    data: string,
+    timestamp: number
+  ) {
+    this.index = index;
+    this.hash = hash;
+    this.previousHash = previousHash;
+    this.data = data;
+    this.timestamp = timestamp;
   }
 }
+const hyunBlock: Block = new Block(0, "asd", "", "hi", 123);
 
-const person = new Human("Hyun Jin", 26, "male");
+let blockchain: [Block] = [hyunBlock]; // array of block
 
-const sayHello = (person: Human): string => {
-  // person 오브젝트를 Human이라는 인터페이스 정의로 넣는다.
-  return `Hello! ${person.name} you are ${person.age} and you are ${person.gender}!`;
-};
+console.log(blockchain);
 
-console.log(sayHello(person));
-
-export {}; // 위 코드들이 모듈이 된다고 알려주는 typescript 규칙
+export {};
