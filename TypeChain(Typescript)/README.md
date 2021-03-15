@@ -14,7 +14,7 @@
 > npm start를 하면 npx tsc가 먼저 실행되고 node에서 index.js가 실행된다
 
 ## 에러 및 버그
-### 1
+### <1>
 > ![img](./error_img/에러1.jpg)  
 > npm start를 입력시 에러가 뜨는 경우가 발생했다.  
 > 해결 방법을 찾아보니 create-react-app과 create-react-native-app을 설치해야 한다고 해서 따라 해보았는데 역시나 같은 에러가 발생했다.  
@@ -24,7 +24,7 @@
 
 </br>
 
-###2
+### <2>
 > ![img](./error_img/에러2.jpg)  
 > 블록들의 index가 모두 1인 문제가 발생했다.  
 > ![img](./error_img/에러2_해결1.jpg)  
