@@ -17,6 +17,14 @@ class Block {
   ): string =>
     CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
 
+  // 들어온 블록의 구조가 유요한지 확인
+  static validateStructure = (aBlock: Block): Boolean =>
+    typeof aBlock.index === "number" &&
+    typeof aBlock.hash === "string" &&
+    typeof aBlock.previousHash === "string" &&
+    typeof aBlock.timestamp === "number" &&
+    typeof aBlock.data === "string";
+
   constructor(
     index: number,
     hash: string,
@@ -61,9 +69,43 @@ const createNewBlock = (data: string): Block => {
     data,
     newTimestamp
   );
+  addBlock(newBlock);
   return newBlock;
 };
-// 결과의 인덱스가 0, 1 이런식으로 나오는 것이 아닌 최종 인덱스가 통합되서 나온다.
-console.log(createNewBlock("Hi!!"), createNewBlock("Bye~~"));
+
+const getHashforBlock = (aBlock: Block): string =>
+  Block.calculateBlockHash(
+    aBlock.index,
+    aBlock.previousHash,
+    aBlock.timestamp,
+    aBlock.data
+  );
+
+const isBlockValid = (cadidateBlock: Block, previousBlock: Block): Boolean => {
+  // 첫 번째의 블록이 유효한지 체크
+  if (!Block.validateStructure(cadidateBlock)) {
+    return false;
+  } else if (previousBlock.index + 1 !== cadidateBlock.index) {
+    return false;
+  } else if (previousBlock.hash !== cadidateBlock.previousHash) {
+    return false;
+  } else if (getHashforBlock(cadidateBlock) !== cadidateBlock.hash) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+const addBlock = (candidateBlock: Block): void => {
+  if (isBlockValid(candidateBlock, getLastBlockchain())) {
+    blockchain.push(candidateBlock);
+  }
+};
+
+createNewBlock("second block");
+createNewBlock("third block");
+createNewBlock("fourth block");
+
+console.log(blockchain);
 
 export {};
