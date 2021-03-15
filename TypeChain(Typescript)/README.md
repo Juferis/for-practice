@@ -1,4 +1,4 @@
-#TypeChain
+# TypeChain
 > Typescript로 블록체인 기술의 블록을 생성하는 코드를 작성하면서 Typescript문법을 학습
 
 ### tsconfig.json
