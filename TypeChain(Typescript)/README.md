@@ -7,7 +7,7 @@
 
 ## npx tsc
 
-> ts파일을 js파일로 컴파일 해준다
+> ts파일을 js파일로 컴파일 해준다.
 
 ## prestart
 
