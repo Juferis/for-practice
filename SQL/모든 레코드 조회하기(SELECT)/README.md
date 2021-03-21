@@ -1,4 +1,6 @@
 # SELECT를 이용한 레코드 조회  
+<br>
+
 ## 모든 레코드 조회하기  
 ![img](./select_01.jpg)  
 > **SELECT** ANIMAL_ID, ANIMAL_TYPE, DATETIME, INTAKE_CONDITION, NAME, SEX_UPON_INTAKE   
