@@ -53,5 +53,5 @@
 ## 상위 n개 레코드  
 >문제: 동물 보호소에 가장 먼저 들어온 동물의 이름을 조회하는 SQL 문을 작성해주세요.  
 >![img](./select_07.jpg)  
->SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME ASC LIMIT 1;  
+>**SELECT** NAME **FROM** ANIMAL_INS **ORDER BY** DATETIME **ASC LIMIT** 1;  
 >가장 먼저 들어온 동물 이름을 DATETIME을 오름차순으로 정렬해 그중 맨 위의 값만 LIMIT로 1개만 출력했다.
