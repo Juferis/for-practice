@@ -32,3 +32,10 @@
 ![img](./select_04.jpg)  
 >**SELECT** ANIMAL_ID, NAME **FROM** ANIMAL_INS **WHERE** INTAKE_CONDITION != "Aged" **ORDER BY** ANIMAL_ID **ASC**;  
 >위 문제와 같은 개념이고 INKATE_CONDITION의 값이 Aged이 아니어야 젊은 동물이다.  
+
+<br>
+
+## 동물의 아이디와 이름
+>문제: 동물 보호소에 들어온 모든 동물의 아이디와 이름을 ANIMAL_ID순으로 조회하는 SQL문을 작성해주세요.
+![img](./select_05.jpg)
+>**SELECT** ANIMAL_ID, NAME **FROM** ANIMAL_INS **ORDER BY** ANIMAL_ID **ASC**;
