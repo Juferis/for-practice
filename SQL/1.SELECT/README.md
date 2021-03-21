@@ -14,4 +14,3 @@
 ![img](./select_02.jpg)  
 >**SELECT** NAME, DATETIME **FROM** ANIMAL_INS **ORDER BY** ANIMAL_ID **DESC**;  
 >역순으로 정렬하는 것을 요구하였기에 DESC(내림차순)를 이용했다.  
->>>>>>> de7e34e81f5f78df29dd04efeb8985ca8deb9c71:SQL/모든 레코드 조회하기(SELECT)/README.md
