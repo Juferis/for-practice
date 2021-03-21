@@ -2,6 +2,7 @@
 <br>
 
 ## 모든 레코드 조회하기  
+문제: 동물 보호소에 들어온 모든 동물의 정보를 ANIMAL_ID순으로 조회하는 SQL문을 작성해주세요.  
 ![img](./select_01.jpg)  
 >**SELECT** ANIMAL_ID, ANIMAL_TYPE, DATETIME, INTAKE_CONDITION, NAME, SEX_UPON_INTAKE   
 >**FROM** ANIMAL_INS **ORDER BY** ANIMAL_ID **ASC**;  
@@ -11,6 +12,7 @@
 <br> 
 
 ## 역순 정렬하기  
+문제: 동물 보호소에 들어온 모든 동물의 이름과 보호 시작일을 조회하는 SQL문을 작성해주세요. 이때 결과는 ANIMAL_ID 역순으로 보여주세요.  
 ![img](./select_02.jpg)  
 >**SELECT** NAME, DATETIME **FROM** ANIMAL_INS **ORDER BY** ANIMAL_ID **DESC**;  
 >역순으로 정렬하는 것을 요구하였기에 DESC(내림차순)를 이용했다.  
