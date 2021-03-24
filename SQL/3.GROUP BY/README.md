@@ -12,6 +12,6 @@
 
 ## 동명 동물 수 찾기  
 >문제: 동물 보호소에 들어온 동물 이름 중 두 번 이상 쓰인 이름과 해당 이름이 쓰인 횟수를 조회하는 SQL문을 작성해주세요. 이때 결과는 이름이 없는 동물은 집계에서 제외하며, 결과는 이름 순으로 조회해주세요.  
->[img](./group_02.jpg)  
+>![img](./group_02.jpg)  
 >**SELECT** NAME, **COUNT**(NAME) **FROM** ANIMAL_INS **GROUP BY** NAME **HAVING COUNT**(NAME) > 1 **AND** NAME **IS NOT NULL ORDER BY** NAME;  
 >두 번 이상 쓰인 이름을 조회하기 위해 HAVING절을 이용했고 이름이 없는 동물은 제외하기에 IS NOT NULL을 사용했다.  
