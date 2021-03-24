@@ -48,9 +48,10 @@
 >**SELECT** (@hour := @hour + 1) **AS** HOUR, (**SELECT COUNT**(*) **FROM** ANIMAL_OUTS **WHERE HOUR**(DATETIME) = @hour) **AS** COUNT  
 >**FROM** ANIMAL_OUTS  
 >**WHERE** @hour < 23;  
->문제 해결을 위해 0부터 23까지 없는 데이터를 추가할 필요가 있었고 JOIN을 이용하는 방법도 있었지만  
->set을 이용하는 코드가 가장 간결헀다.  
+>문제 해결을 위해 0부터 23까지 없는 데이터를 추가할 필요가 있었고  
+>JOIN을 이용하는 방법도 있었지만, set을 이용하는 코드가 가장 간결헀다.  
 >select가 테이블의 처음부터 끝까지 출력하면서 한 줄 한 줄 @hour에 맞는 시간을 카운트하고 테이블의 행만큼 반복하는 코드이다.
+>set은 변수를 할당 해주는 명령어이다. (set @변수명 = 값)
 
 <br>
 
