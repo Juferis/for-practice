@@ -7,3 +7,10 @@
 
 <br>
 
+### SUM, MAX, MIN  
+> [참고](https://github.com/Juferis/For-practice/tree/master/SQL/2.SUM%2C%20MAX%2C%20MIN)  
+
+<br>
+
+### GROUP BY  
+> [참고](https://github.com/Juferis/For-practice/tree/master/SQL/3.GROUP%20BY)  
