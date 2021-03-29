@@ -14,3 +14,8 @@
 
 ### GROUP BY  
 > [참고](https://github.com/Juferis/For-practice/tree/master/SQL/3.GROUP%20BY)  
+
+<br>
+
+### IS NULL  
+>[참고](https://github.com/Juferis/For-practice/blob/master/SQL/4.IS%20NULL/README.md)
