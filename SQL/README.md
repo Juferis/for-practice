@@ -19,3 +19,8 @@
 
 ### IS NULL  
 >[참고](https://github.com/Juferis/For-practice/blob/master/SQL/4.IS%20NULL/README.md)
+
+<br>
+
+### String, Date  
+> [참고](https://github.com/Juferis/For-practice/tree/master/SQL/5.String%2C%20DATE)  
