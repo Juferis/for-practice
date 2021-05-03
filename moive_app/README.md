@@ -15,3 +15,11 @@
 > 1. 프로젝트 내부에 .env 파일 만들기
 > 2. .env파일에 CHOKIDAR_USEPOLLING=true 입력하기
 > 3. 다시 npm start를 통해 시작해주면 수정 후 저장할 때마다 자동갱신해서 보여준다.
+
+## 새로 알게된 내용
+
+### map 함수([강의](https://nomadcoders.co/react-fundamentals/lectures/1549))
+
+> Array의 각 item에 function을 적용하고 array를 돌려준다.  
+> 예시  
+> ![img](./images/01_map.jpg)
