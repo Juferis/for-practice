@@ -21,7 +21,7 @@
 ### map 함수([강의](https://nomadcoders.co/react-fundamentals/lectures/1549))
 
 > Array의 각 item에 function을 적용하고 array를 돌려준다.
-> 무엇이 들어오든 반환값은 array이다.
+> 무엇이 들어오든 반환값은 array이다.  
 > 예시)  
 > ![img](./images/01_map.jpg)
 
