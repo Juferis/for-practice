@@ -33,5 +33,5 @@
 > React의 각각 list 내의 child는 unique한 keyprop을 가져야하는데 갖지 않아 생기는 에러  
 > React의 element들은 unique해야 하고 list에 집어 넣을 때 유일성을 잃어버린다.
 
-> 해결 방법
+> 해결 방법  
 > 각각의 item에 id를 할당해 유일성을 주고 map함수 처리시 id를 같이 넘겨주는 방식으로 해결
