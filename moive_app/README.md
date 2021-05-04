@@ -16,6 +16,13 @@
 > 2. .env파일에 CHOKIDAR_USEPOLLING=true 입력하기
 > 3. 다시 npm start를 통해 시작해주면 수정 후 저장할 때마다 자동갱신해서 보여준다.
 
+### 1.1 영화 리스트 JSON, axios
+
+> 영화 리스트의 JSON을  
+> https://yts-proxy.nomadcoders1.now.sh/list_movies.json 여기에서 받아온다.  
+> JSON파일을 사용하기 위해 axios를 사용했다.(빠르지 않기에 async를 사용하자)  
+> axios 설치 : npm i axios
+
 ## 2.0 새로 알게된 내용
 
 ### 2.1 map 함수([강의](https://nomadcoders.co/react-fundamentals/lectures/1549))
