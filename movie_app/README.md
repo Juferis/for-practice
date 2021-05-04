@@ -1,5 +1,15 @@
 # ReactJS로 Movie app 만들기
 
+## 결과 화면
+
+![img](./images/run.jpg)
+
+## 작동 방식
+
+> 1. JSON에서 영화 데이터 받아오기
+> 2. setState로 state의 movies배열에 영화 데이터 넣기
+> 3. 렌더링 하여 화면에 출력하기
+
 ## 1.0 참고작업
 
 > 콘솔에 명령어 입력으로 설치 : npx create-react-app 폴더명  
