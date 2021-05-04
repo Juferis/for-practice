@@ -55,3 +55,13 @@
 
 > **해결 방법**  
 > 각각의 item에 id를 할당해 유일성을 주고 map함수 처리시 id를 같이 넘겨주는 방식으로 해결
+
+### 3.2 "class" 에러
+
+> HTML을 JSX로 만들었다.  
+> JSX는 JavaScript로 React “엘리먼트(element)” 를 생성한다.  
+> HTML class는 class고 HTML이 JavaScirpt class안에 있으면 component class에 의해 혼란스러워한다.  
+> ![img](./images.error_02.jpg)
+
+> **해결 방법**
+> class를 React가 혼란스러워 하지 않게 className으로 수정한다.
