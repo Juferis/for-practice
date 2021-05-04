@@ -61,7 +61,7 @@
 > HTML을 JSX로 만들었다.  
 > JSX는 JavaScript로 React “엘리먼트(element)” 를 생성한다.  
 > HTML class는 class고 HTML이 JavaScirpt class안에 있으면 component class에 의해 혼란스러워한다.  
-> ![img](./images.error_02.jpg)
+> ![img](./images/error_02.jpg)
 
 > **해결 방법**
 > class를 React가 혼란스러워 하지 않게 className으로 수정한다.
