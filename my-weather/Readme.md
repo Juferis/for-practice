@@ -4,9 +4,9 @@
 
 ## 구동 화면
 
-<img src = "./images/run_01.jpg" width="100" height="100">
-<img src = "./images/run_02.jpg" width="100" height="100">
-<img src = "./images/run_03.jpg" width="100" height="100">
+<img src = "./images/run_01.jpg" width="10%" height="10%">
+<img src = "./images/run_02.jpg" width="10%" height="10%">
+<img src = "./images/run_03.jpg" width="10%" height="10%">
 
 <br>
 
