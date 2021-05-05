@@ -12,6 +12,11 @@
 > expo를 사용한 이유는 React Native를 위한 설정 파일 같은 것들이 없는 방식으로 모든것이 셋업 되어있다.  
 > window환경에서 ios를 테스트 할 수 있다.
 
+### expo-location
+
+> navite에서 제공하는 api가 있지만 expo에서 제공하는 위치 api의 신뢰성이 높아서 사용
+> npm install expo-location 으로 설치
+
 ## 에러
 
 > ![img](./images/error_01.jpg)  
