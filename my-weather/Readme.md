@@ -27,9 +27,11 @@
 <br>
 
 ## 2.0 설명  
-> 아래의 방식을 통해 위치 정보를 추출한다.  
+> 1. 아래의 방식을 통해 위치 정보를 추출한다.  
 > ![img](./images/location_code.jpg)  
 > ![img](./images/location_log.jpg)  
+> 2. 정보에서 latitude, longitude를 가져오고 OpenWeather API를 사용하여 위치를 기반한 날씨와 온도 정보를 받아오기  
+> 3. 정보를 이용해 날씨와 온도에 맞는 화면을 보여줌  
 
 <br>
 
