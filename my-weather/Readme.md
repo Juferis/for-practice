@@ -2,6 +2,14 @@
 
 > React Native를 이용해 날씨앱 만들기
 
+## 구동 화면
+
+![img](./images/run_01.jpg)
+![img](./images/run_02.jpg)
+![img](./images/run_03.jpg)
+
+<br>
+
 ## 1.0 사용기술
 
 > node version 12.20.1  
