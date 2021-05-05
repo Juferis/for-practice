@@ -7,6 +7,8 @@
 > node version 12.20.1  
 > expo  
 > axios  
+> expo 내장 Icon  
+> expo-liner-gradient(css 그라데이션)  
 > Open Weather API[링크](https://openweathermap.org/api)
 
 ### Expo [링크](https://docs.expo.io/)
