@@ -37,3 +37,28 @@
 > npm start 명령어로 expo 실행 후 Tunnel로 바꾸자 만난 에러  
 > **해결방법**  
 > npm install @expo/ngrok@2.4.3 명령어 입력 후 설치
+
+> ![img](./images/error_02.jpg)  
+> ReferenceError: Can't find variable: Atmosphere에러
+> Weather.js에서 weatherBackground 객체를 만들고나서 발생
+> **해결방법**  
+> Thunderstorm: {
+
+    iconName: "weather-lightning",
+    gradient: ["#373B44", "#4286f4"],
+
+},  
+ Drizzle: {  
+ iconName: "weather-rainy",  
+ gradient: ["#74ebd5", "#ACB6E5"],  
+ },
+
+> 이런식으로 하나씩 해야 하는데  
+> Thunderstorm, Drizzle: {
+
+    iconName: "weather-lightning",
+    gradient: ["#373B44", "#4286f4"],
+
+},
+
+> 이렇게 한번에 하려고 해서 에러가 발생했다.
