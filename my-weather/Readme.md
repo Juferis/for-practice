@@ -2,10 +2,12 @@
 
 > React Native를 이용해 날씨앱 만들기
 
-## 사용기술
+## 1.0 사용기술
 
 > node version 12.20.1  
-> expo
+> expo  
+> axios  
+> Open Weather API[링크](https://openweathermap.org/api)
 
 ### Expo [링크](https://docs.expo.io/)
 
@@ -17,7 +19,17 @@
 > navite에서 제공하는 api가 있지만 expo에서 제공하는 위치 api의 신뢰성이 높아서 사용
 > npm install expo-location 으로 설치
 
-## 에러
+<br>
+
+## 2.0 설명
+
+> 아래의 방식을 통해 위치 정보를 추출한다.
+> ![img](./images/location_code.jpg)  
+> ![img](./images/location_log.jpg)
+
+<br>
+
+## 3.0 에러
 
 > ![img](./images/error_01.jpg)  
 > npm start 명령어로 expo 실행 후 Tunnel로 바꾸자 만난 에러  
