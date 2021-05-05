@@ -4,9 +4,9 @@
 
 ## 구동 화면
 
-![img](./images/run_01.jpg)
-![img](./images/run_02.jpg)
-![img](./images/run_03.jpg)
+![img](./images/run_01.jpg){: width="100" height="100"}
+![img](./images/run_02.jpg){: width="100" height="100"}
+![img](./images/run_03.jpg){: width="100" height="100"}
 
 <br>
 
