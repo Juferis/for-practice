@@ -48,23 +48,19 @@
 > ReferenceError: Can't find variable: Atmosphere에러
 > Weather.js에서 weatherBackground 객체를 만들고나서 발생
 > **해결방법**  
-> Thunderstorm: {
-
+``` Thunderstorm: {
     iconName: "weather-lightning",
     gradient: ["#373B44", "#4286f4"],
-
 },  
  Drizzle: {  
  iconName: "weather-rainy",  
  gradient: ["#74ebd5", "#ACB6E5"],  
- },
+ } ```
 
 > 이런식으로 하나씩 해야 하는데  
-> Thunderstorm, Drizzle: {
-
+```Thunderstorm, Drizzle: {
     iconName: "weather-lightning",
     gradient: ["#373B44", "#4286f4"],
-
-},
+}```
 
 > 이렇게 한번에 하려고 해서 에러가 발생했다.
