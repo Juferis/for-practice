@@ -25,7 +25,7 @@ export const getById = (id) => {
 
 export const deleteMovie = (id) => {
   // 같은 id가 없도록 한다.
-  const cleanedMovies = movies.filter((movie) => movie.id !== String(id));
+  const cleanedMovies = movies.filter((movie) => movie.id !== id);
   if (movies.length > cleanedMovies.length) {
     movies = cleanedMovies;
     return true;
@@ -36,7 +36,7 @@ export const deleteMovie = (id) => {
 
 export const addMovie = (name, score) => {
   const newMovie = {
-    id: `${movies.length}`,
+    id: movies.length,
     name,
     score,
   };
