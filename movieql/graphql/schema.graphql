@@ -10,4 +10,3 @@ type Movie {
 type Query {
   movies(limit: Int, rating: Float): [Movie]!
 }
-// Mutation은 Database 상태가 변할 때 사용한다.
