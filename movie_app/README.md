@@ -30,6 +30,8 @@
 > JSON파일을 사용하기 위해 axios를 사용했다.(빠르지 않기에 async를 사용하자)  
 > axios 설치 : npm i axios
 
+### 1.2 직접 만든 [API](https://github.com/Juferis/for-practice/tree/master/movieql)사용
+> 영화 정보를 쉽게 검색하고 찾을 수 있도록 도와주는 AP
 <br>
 
 ## 2.0 새로 알게된 내용
