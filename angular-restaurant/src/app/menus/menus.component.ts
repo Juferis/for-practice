@@ -16,9 +16,17 @@ export class MenusComponent implements OnInit {
   onSelect(menu: Menu): void {
     this.selectedMenu = menu;
   }
+  pickMenu?: Menu;
+  onPick(pick: Menu): void {
+    this.menuService.pickMenu(pick);
+    this.pickMenu = pick;
+  }
 
   getMenus(): void {
     this.menuService.getMenus().subscribe((menus) => (this.menus = menus));
+  }
+  pickMenus(): void {
+    this.menuService.pickMenu().subscribe((pick) => (this.menus = pick));
   }
 
   ngOnInit(): void {

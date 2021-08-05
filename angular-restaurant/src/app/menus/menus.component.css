@@ -3,7 +3,12 @@
   display: flex;
   justify-content: space-between;
 }
-.menus__list__menu span {
+.menus__list__menu__div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.menus__list__menu__div span {
   margin-right: 10px;
   width: 90%;
   background-color: cornsilk;
@@ -13,16 +18,16 @@
   padding: 5px;
   cursor: pointer;
 }
-.menus__list__menu :first-child {
+.menus__list__menu__div :first-child {
   width: 10%;
   background-color: cornflowerblue;
 }
-.menus__list__menu :nth-child(3) {
+.menus__list__menu__div :nth-child(3) {
   width: 30%;
   text-align: center;
   background-color: darkgray;
 }
-.menus__list__menu :last-child {
+.menus__list__menu__div:last-child {
   width: 30px;
   cursor: pointer;
 }

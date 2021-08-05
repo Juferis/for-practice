@@ -1,14 +1,12 @@
 <div class="menus">
   <ul class="menus__list">
-    <li
-      class="menus__list__menu"
-      *ngFor="let menu of menus"
-      (click)="onSelect(menu)"
-    >
-      <span>{{ menu.id }}.</span>
-      <span>{{ menu.name }}</span>
-      <span>{{ menu.price }}₩</span>
-      <input type="checkbox" />
+    <li class="menus__list__menu" *ngFor="let menu of menus">
+      <div class="menus__list__menu__div" (click)="onSelect(menu)">
+        <span>{{ menu.id }}.</span>
+        <span>{{ menu.name }}</span>
+        <span>{{ menu.price }}₩</span>
+      </div>
+      <input type="checkbox" (click)="onPick(menu)" />
     </li>
   </ul>
 </div>

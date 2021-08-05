@@ -1,1 +1,13 @@
-<h1>장바구니</h1>
+<div *ngIf="bucketService.bucket.length">
+  <h1>장바구니</h1>
+  <button (click)="bucketService.clear()">장바구니 비우기</button>
+  <button (click)="bucketService.result()">구매하기</button>
+  <h2>알림</h2>
+  <div *ngFor="let picks of bucketService.alert">{{ picks }}</div>
+  <div class="result" *ngIf="bucketService.showAll.length">
+    <h2>계산서</h2>
+    고른 메뉴들 =
+    <span *ngFor="let menu of bucketService.showAll">{{ menu }}, </span>
+    <span>가격 합계: {{ bucketService.priceAll }}</span>
+  </div>
+</div>

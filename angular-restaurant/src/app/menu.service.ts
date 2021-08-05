@@ -3,15 +3,25 @@ import { Observable, of } from 'rxjs';
 
 import { Menu } from './menu';
 import { MENUS } from './mock-menus';
+import { BucketService } from './bucket.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MenuService {
-  constructor() {}
+  constructor(private bucketService: BucketService) {}
 
   getMenus(): Observable<Menu[]> {
     const menus = of(MENUS);
     return menus;
+  }
+  pickMenu(pickOne?: Menu): Observable<Menu[]> {
+    const pick = of(MENUS);
+    if (pickOne) {
+      const pick: Menu = pickOne;
+      this.bucketService.add(pick);
+    }
+    this.bucketService.show(`고른 메뉴: ${pickOne?.name}`);
+    return pick;
   }
 }

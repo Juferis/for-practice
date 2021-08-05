@@ -1,4 +1,7 @@
 <h1 class="title">{{ title }}</h1>
-
-<app-menus></app-menus>
+<nav>
+  <a routerLink="/">랜덤 추천 메뉴</a>
+  <a routerLink="/menus">메뉴 목록 보기</a>
+</nav>
+<router-outlet></router-outlet>
 <app-bucket></app-bucket>
