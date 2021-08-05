@@ -1,0 +1,21 @@
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.menu-detail {
+  margin-top: 20px;
+  width: 20%;
+  background-color: floralwhite;
+  border: slategrey solid 3px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.menus__change {
+  display: block;
+  margin-top: 10px;
+}
+.menus__change__div {
+  display: flex;
+  justify-content: space-between;
+}
