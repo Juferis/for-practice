@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { MenusComponent } from './menus/menus.component';
 import { FormsModule } from '@angular/forms';
 import { MenuDetailComponent } from './menu-detail/menu-detail.component';
+import { BucketComponent } from './bucket/bucket.component';
 
 @NgModule({
-  declarations: [AppComponent, MenusComponent, MenuDetailComponent],
+  declarations: [AppComponent, MenusComponent, MenuDetailComponent, BucketComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

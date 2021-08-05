@@ -18,7 +18,7 @@ export class MenusComponent implements OnInit {
   }
 
   getMenus(): void {
-    this.menus = this.menuService.getMenus();
+    this.menuService.getMenus().subscribe((menus) => (this.menus = menus));
   }
 
   ngOnInit(): void {
