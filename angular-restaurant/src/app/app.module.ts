@@ -7,9 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { MenuDetailComponent } from './menu-detail/menu-detail.component';
 import { BucketComponent } from './bucket/bucket.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, MenusComponent, MenuDetailComponent, BucketComponent],
+  declarations: [AppComponent, MenusComponent, MenuDetailComponent, BucketComponent, DashboardComponent],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -3,3 +3,16 @@
   font-weight: 600;
   margin-bottom: 20px;
 }
+
+.menu-nav {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.menu-nav a {
+  color: black;
+  margin-right: 10px;
+  text-decoration: none;
+  background-color: cornflowerblue;
+  padding: 10px;
+  border-radius: 10px;
+}
