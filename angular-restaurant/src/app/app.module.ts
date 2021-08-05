@@ -9,9 +9,17 @@ import { BucketComponent } from './bucket/bucket.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
-  declarations: [AppComponent, MenusComponent, MenuDetailComponent, BucketComponent, DashboardComponent],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    MenusComponent,
+    MenuDetailComponent,
+    BucketComponent,
+    DashboardComponent,
+  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
