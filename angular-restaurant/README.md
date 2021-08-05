@@ -1,27 +1,27 @@
-# AngularRestaurant
+# Hyun's Restaurant
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+> Angular를 이용한 메뉴판 애플리케이션  
+> SPA 방식의 웹 프로그래밍
 
-## Development server
+<br>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 1.0 새로 알게된 정보
 
-## Code scaffolding
+### 1.1 데이터 바인딩
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> 사용자가 볼 수 있도록 데이터를 화면에 표시하거나 사용자의 동작(ex. 클릭, 터치, 키입력)에 반응하는 과정
 
-## Build
+### 1.2 [(ngModel)]
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+> Angular의 양방향 바인딩 문법
 
-## Running unit tests
+### 1.3 $
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> Observable을 뜻하는 관용 표현
 
-## Running end-to-end tests
+### 1.4 RxJS 옵저버블과 옵저버
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> 비동기 방식을 위해 사용한다.  
+> 옵저버블은 특정 객체를 관찰하는 옵저버에게 여러 이벤트나 값을 보내는 역할  
+> 옵저저블에 subscribe가 호출 되어야 옵저저블과 옵저버가 연결되어 실행된다  
+> 실행된 결과는 옵저버블의 next가 실행되면서 확인 가능
