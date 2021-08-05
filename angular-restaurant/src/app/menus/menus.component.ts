@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Menu } from '../menu';
-import { MENUS } from '../mock-menus';
+import { MenuService } from '../menu.service';
 
 @Component({
   selector: 'app-menus',
@@ -9,13 +9,19 @@ import { MENUS } from '../mock-menus';
   styleUrls: ['./menus.component.css'],
 })
 export class MenusComponent implements OnInit {
-  menus = MENUS;
-  constructor() {}
+  menus: Menu[] = [];
+  constructor(private menuService: MenuService) {}
 
   selectedMenu?: Menu;
   onSelect(menu: Menu): void {
     this.selectedMenu = menu;
   }
 
-  ngOnInit(): void {}
+  getMenus(): void {
+    this.menus = this.menuService.getMenus();
+  }
+
+  ngOnInit(): void {
+    this.getMenus();
+  }
 }
