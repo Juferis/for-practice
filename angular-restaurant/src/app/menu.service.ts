@@ -5,15 +5,18 @@ import { Menu } from './menu';
 import { MENUS } from './mock-menus';
 import { BucketService } from './bucket.service';
 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root',
 })
 export class MenuService {
-  constructor(private bucketService: BucketService) {}
+  constructor(private http: HttpClient, private bucketService: BucketService) {}
+
+  private menusUrl = 'api/menus';
 
   getMenus(): Observable<Menu[]> {
-    const menus = of(MENUS);
-    return menus;
+    return this.http.get<Menu[]>(this.menusUrl);
   }
   pickMenu(pickOne?: Menu): Observable<Menu[]> {
     const pick = of(MENUS);
