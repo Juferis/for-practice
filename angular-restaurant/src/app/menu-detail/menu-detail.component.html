@@ -1,0 +1,10 @@
+<div *ngIf="menu">
+  <h2>{{ menu.name }} 수정하기</h2>
+  <div><span>번호: </span>{{ menu.id }}</div>
+  <div class="menus__change">
+    <label for="name">메뉴 이름: </label>
+    <input id="name" placeholder="메뉴 이름" [(ngModel)]="menu.name" />
+    <label for="price">가격: </label>
+    <input id="price" placeholder="가격" [(ngModel)]="menu.price" />
+  </div>
+</div>

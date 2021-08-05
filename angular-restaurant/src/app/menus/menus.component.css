@@ -1,0 +1,28 @@
+.menus__list__menu {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.menus__list__menu span {
+  margin-right: 10px;
+  width: 90%;
+  background-color: cornsilk;
+  text-align: start;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.menus__list__menu :first-child {
+  width: 10%;
+  background-color: cornflowerblue;
+}
+.menus__list__menu :nth-child(3) {
+  width: 30%;
+  text-align: center;
+  background-color: darkgray;
+}
+.menus__list__menu :last-child {
+  width: 30px;
+  cursor: pointer;
+}

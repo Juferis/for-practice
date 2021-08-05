@@ -1,9 +1,16 @@
-<div>
-  <ul>
-    <li>{{ testMenu.name }} {{ testMenu.price }}원</li>
+<div class="menus">
+  <ul class="menus__list">
+    <li
+      class="menus__list__menu"
+      *ngFor="let menu of menus"
+      (click)="onSelect(menu)"
+    >
+      <span>{{ menu.id }}.</span>
+      <span>{{ menu.name }}</span>
+      <span>{{ menu.price }}₩</span>
+      <input type="checkbox" />
+    </li>
   </ul>
 </div>
-<div>
-  <label for="name">메뉴 이름: </label>
-  <input id="name" [(ngModel)]="testMenu.name" placeholder="메뉴 이름" />
-</div>
+
+<app-menu-detail [menu]="selectedMenu"></app-menu-detail>
