@@ -1,0 +1,9 @@
+<h1>Test Factory</h1>
+<button (click)="getFactory()">Show</button>
+<div *ngIf="factorys.length">
+  <div *ngFor="let factory of factorys">
+    <span>{{ factory.id }}</span>
+    <span>{{ factory.name }}</span>
+    <span>{{ factory.status }}</span>
+  </div>
+</div>
