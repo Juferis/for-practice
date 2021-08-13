@@ -10,11 +10,36 @@
   <main>
     <input class="toggle-all" type="checkbox" />
     <ul id="todo-list" class="todo-list">
-      <app-todos></app-todos>
-      <!-- <li class="todoItem"><input type="checkbox" /> 내가 할일 테스트</li> -->
+      <div id="todo-list__div" *ngIf="todos">
+        <li
+          id="li_{{ list.id }}"
+          class="todoItem"
+          *ngFor="let list of todos"
+          (focus)="onFocus()"
+          (dblclick)="editOn($event)"
+        >
+          <input
+            id="{{ list.id }}"
+            type="checkbox"
+            [ngClass]="list.check ? 'checked' : ''"
+            (click)="clickHandler($event)"
+            [checked]="list.check"
+          />{{ list.text }}
+          <button
+            id="btn_{{ list.id }}"
+            (click)="onBtnHandler($event)"
+            class="todoItem__btn"
+          >
+            x
+          </button>
+          <input class="editInput" (keydown.enter)="onFocus()" />
+        </li>
+      </div>
     </ul>
     <div class="count-container">
-      <span class="todo-count">총 <strong>0</strong> 개</span>
+      <span class="todo-count"
+        >총 <strong>{{ todos.length }}</strong> 개</span
+      >
       <ul class="filters">
         <li>
           <a class="all selected" href="#">전체보기</a>

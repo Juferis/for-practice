@@ -21,10 +21,36 @@ export class TodoServiceService {
     }
   }
 
+  focusOut(event: any) {
+    event.target.style.display = 'none';
+  }
+
+  editOn(event: any) {
+    const id = event.target.id.slice(3);
+    const li = document.getElementById(`${event.target.id}`);
+    const input = <HTMLLIElement>li?.querySelector('.editInput');
+    input.style.display = 'inline';
+    input.value = 123;
+    input.addEventListener('blur', this.focusOut);
+  }
+
+  // 삭제 이벤트
+  deleteHandler(event: any) {
+    this.loadTodo();
+    const id = event.target.id.slice(4);
+    const li = document.getElementById(`li_${id}`);
+    li?.parentNode?.removeChild(li);
+    this.todos.splice(id, 1);
+    for (let i = 0; i < this.todos.length; i++) {
+      this.todos[i].id = i;
+    }
+    this.saveTodo();
+  }
+
   // input값 배열에 저장하기
   saveHandler(value: string) {
     this.loadTodo();
-    const newId: number = this.todos.length + 1;
+    const newId: number = this.todos.length;
     const todo: Todos = {
       id: newId,
       text: value,
@@ -36,6 +62,36 @@ export class TodoServiceService {
 
   getTodos() {
     this.loadTodo();
+    return this.todos;
+  }
+
+  // 체크박스 이벤트
+  clickEvent(event: any) {
+    const checkboxId = event.target.id;
+    const checkbox = document.getElementById(checkboxId);
+    const li = document.getElementById(`li_${checkboxId}`);
+    this.todos = this.getTodos();
+    if (this.todos[checkboxId].check) {
+      checkbox?.classList.remove('checked');
+      li?.classList.remove('complete');
+      this.todos[checkboxId].check = false;
+      this.saveTodo();
+    } else {
+      checkbox?.classList.add('checked');
+      li?.classList.add('complete');
+      this.todos[checkboxId].check = true;
+      this.saveTodo();
+    }
+  }
+
+  // enter키 입력 이벤트
+  inputEvent(event: any) {
+    if (event.keyCode === 13) {
+      const text = event.target.value;
+      this.saveHandler(text);
+      this.todos = this.getTodos();
+    }
+    event.target.value = '';
     return this.todos;
   }
 

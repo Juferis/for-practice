@@ -14,7 +14,6 @@
   font-weight: 300;
   color: #e6e6e6;
 }
-
 .todoapp h1 {
   position: absolute;
   top: -125px;
@@ -290,4 +289,14 @@ html .clear-completed:active {
 
 .info a:hover {
   text-decoration: underline;
+}
+
+.todoItem {
+  position: relative;
+}
+
+.editInput {
+  display: none;
+  position: absolute;
+  left: 0;
 }
