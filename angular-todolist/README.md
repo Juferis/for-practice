@@ -6,9 +6,9 @@ app.component에 묶여있는 코드들을 더 작은 단위의 컴포넌트로 
 
 🎯 요구사항
 
-[X] todo list에 todoItem을 키보드로 입력하여 추가하기
+[x] todo list에 todoItem을 키보드로 입력하여 추가하기
 
-[X] todo list의 체크박스를 클릭하여 complete 상태로 변경 (li tag 에 completed class 추가, input 태그에 checked 속성 추가)
+[x] todo list의 체크박스를 클릭하여 complete 상태로 변경 (li tag 에 completed class 추가, input 태그에 checked 속성 추가)
 
 [X] todo list의 x버튼을 이용해서 해당 엘리먼트를 삭제
 
