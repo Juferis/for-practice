@@ -10,30 +10,87 @@
   <main>
     <input class="toggle-all" type="checkbox" />
     <ul id="todo-list" class="todo-list">
-      <div id="todo-list__div" *ngIf="todos">
-        <li
-          id="li_{{ list.id }}"
-          class="todoItem"
-          *ngFor="let list of todos"
-          (focus)="onFocus()"
-          (dblclick)="editOn($event)"
-        >
-          <input
-            id="{{ list.id }}"
-            type="checkbox"
-            [ngClass]="list.check ? 'checked' : ''"
-            (click)="clickHandler($event)"
-            [checked]="list.check"
-          />{{ list.text }}
-          <button
-            id="btn_{{ list.id }}"
-            (click)="onBtnHandler($event)"
-            class="todoItem__btn"
+      <div *ngIf="toggle === 0">
+        <div id="todo-list__div" *ngIf="todos">
+          <li
+            id="li_{{ list.id }}"
+            class="todoItem"
+            *ngFor="let list of todos"
+            (dblclick)="editOn($event)"
           >
-            x
-          </button>
-          <input class="editInput" (keydown.enter)="onFocus()" />
-        </li>
+            <input
+              id="{{ list.id }}"
+              type="checkbox"
+              [ngClass]="list.check ? 'checked' : ''"
+              (click)="clickHandler($event)"
+              [checked]="list.check"
+            />{{ list.text }}
+            <button
+              id="btn_{{ list.id }}"
+              (click)="onBtnHandler($event)"
+              class="todoItem__btn"
+            >
+              x
+            </button>
+            <input class="editInput" (keydown)="editSubmit($event)" />
+          </li>
+        </div>
+      </div>
+      <div *ngIf="toggle === 1">
+        <div id="todo-list__div" *ngIf="todos">
+          <li
+            id="li_{{ list.id }}"
+            class="todoItem"
+            *ngFor="let list of todos"
+            (dblclick)="editOn($event)"
+          >
+            <span class="todo-toggle" *ngIf="list.check === false">
+              <input
+                id="{{ list.id }}"
+                type="checkbox"
+                [ngClass]="list.check ? 'checked' : ''"
+                (click)="clickHandler($event)"
+                [checked]="list.check"
+              />{{ list.text }}
+              <button
+                id="btn_{{ list.id }}"
+                (click)="onBtnHandler($event)"
+                class="todoItem__btn"
+              >
+                x
+              </button>
+              <input class="editInput" (keydown)="editSubmit($event)" />
+            </span>
+          </li>
+        </div>
+      </div>
+      <div *ngIf="toggle === 2">
+        <div id="todo-list__div" *ngIf="todos">
+          <li
+            id="li_{{ list.id }}"
+            class="todoItem"
+            *ngFor="let list of todos"
+            (dblclick)="editOn($event)"
+          >
+            <span class="todo-toggle" *ngIf="list.check === true">
+              <input
+                id="{{ list.id }}"
+                type="checkbox"
+                [ngClass]="list.check ? 'checked' : ''"
+                (click)="clickHandler($event)"
+                [checked]="list.check"
+              />{{ list.text }}
+              <button
+                id="btn_{{ list.id }}"
+                (click)="onBtnHandler($event)"
+                class="todoItem__btn"
+              >
+                x
+              </button>
+              <input class="editInput" (keydown)="editSubmit($event)" />
+            </span>
+          </li>
+        </div>
       </div>
     </ul>
     <div class="count-container">
@@ -42,15 +99,18 @@
       >
       <ul class="filters">
         <li>
-          <a class="all selected" href="#">전체보기</a>
+          <a class="all selected" href="#" (click)="showAll()">전체보기</a>
         </li>
         <li>
-          <a class="active" href="#active">해야할 일</a>
+          <a class="active" href="#active" (click)="showTodo()">해야할 일</a>
         </li>
         <li>
-          <a class="completed" href="#completed">완료한 일</a>
+          <a class="completed" href="#completed" (click)="showDone()"
+            >완료한 일</a
+          >
         </li>
       </ul>
     </div>
   </main>
 </div>
+<router-outlet></router-outlet>

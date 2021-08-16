@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { TodosComponent } from './todos/todos.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
+  { path: '#', component: AppComponent },
   { path: '#active', component: TodosComponent },
 ];
 

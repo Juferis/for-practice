@@ -21,16 +21,33 @@ export class TodoServiceService {
     }
   }
 
+  editSubmit(event: any) {
+    if (event.keyCode === 27) {
+      event.target.style.display = 'none';
+    } else if (event.keyCode === 13) {
+      const id = event.target.parentNode.id.slice(3);
+      const text = event.target.value;
+      const nowText = this.todos[id].text;
+      if (text === '') {
+        event.target.style.display = 'none';
+      } else if (text !== nowText) {
+        this.todos[id].text = text;
+        this.saveTodo();
+        event.target.style.display = 'none';
+      } else {
+        event.target.style.display = 'none';
+      }
+    }
+  }
+
   focusOut(event: any) {
     event.target.style.display = 'none';
   }
 
   editOn(event: any) {
-    const id = event.target.id.slice(3);
     const li = document.getElementById(`${event.target.id}`);
     const input = <HTMLLIElement>li?.querySelector('.editInput');
     input.style.display = 'inline';
-    input.value = 123;
     input.addEventListener('blur', this.focusOut);
   }
 

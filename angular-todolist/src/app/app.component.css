@@ -300,3 +300,6 @@ html .clear-completed:active {
   position: absolute;
   left: 0;
 }
+.todo-toggle {
+  margin: 0px;
+}

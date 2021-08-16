@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoServiceService } from './todo-service.service';
-import { TodosComponent } from './todos/todos.component';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +10,24 @@ export class AppComponent {
   title = 'todo';
   todo: string = '';
   todos: any;
+  toggle: number = 0;
 
   constructor(private todoService: TodoServiceService) {}
+
+  showDone() {
+    this.toggle = 2;
+    this.todos = this.todoService.getTodos();
+  }
+
+  showTodo() {
+    this.toggle = 1;
+    this.todos = this.todoService.getTodos();
+  }
+
+  showAll() {
+    this.toggle = 0;
+    this.todos = this.todoService.getTodos();
+  }
 
   clickHandler(event: any): void {
     this.todoService.clickEvent(event);
@@ -22,8 +37,8 @@ export class AppComponent {
     this.todoService.editOn(event);
   }
 
-  onFocus() {
-    console.log('Focus');
+  editSubmit(event: any) {
+    this.todoService.editSubmit(event);
   }
 
   onBtnHandler(event: any) {
