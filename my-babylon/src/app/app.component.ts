@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   public canvas!: HTMLCanvasElement;
   public engine!: BABYLON.Engine;
   public scene!: BABYLON.Scene;
-  public camera!: BABYLON.FreeCamera;
+  public camera!: BABYLON.DeviceOrientationCamera;
 
   @ViewChild('rendererCanvas', { static: true })
   public rendererCanvas!: ElementRef<HTMLCanvasElement>;
@@ -34,11 +34,19 @@ export class AppComponent implements OnInit {
 
     const scene = (this.scene = new BABYLON.Scene(engine));
 
-    const camera = (this.camera = new BABYLON.FreeCamera(
+    const camera = new BABYLON.DeviceOrientationCamera(
       'camera',
-      new BABYLON.Vector3(0, 50, 0),
+      new BABYLON.Vector3(0, 0, 0),
       scene
-    ));
+    );
+    camera.setTarget(new BABYLON.Vector3(0, 0, 10));
+    camera.attachControl(this.canvas, true);
+
+    // const camera = (this.camera = new BABYLON.FreeCamera(
+    //   'camera',
+    //   new BABYLON.Vector3(0, 50, 0),
+    //   scene
+    // ));
 
     const light = new BABYLON.HemisphericLight(
       'light',
