@@ -65,7 +65,7 @@ export class AppComponent implements OnInit {
     );
     ground.material = groundMat;
   }
-  // @@이 친구를 잘 봐두자@@ 생성한 화면을 보여주기
+  // @@ 이 친구를 잘 봐두자 생성한 화면을 보여주기 @@
   private runRenderLoop(): void {
     this.ngZone.runOutsideAngular(() => {
       this.createScene();
@@ -86,12 +86,14 @@ export class AppComponent implements OnInit {
       });
     });
   }
+  // 집 매쉬의 텍스처 설정
   window1 = new BABYLON.Vector4(0.5, 0.0, 0.75, 1.0); //뒷 면
   window2 = new BABYLON.Vector4(0.0, 0.0, 0.25, 1.0); //앞 면
   window3 = new BABYLON.Vector4(0.25, 0, 0.5, 1.0); // 오른쪽
   window4 = new BABYLON.Vector4(0.75, 0, 1.0, 1.0); //왼쪽
   faceUV = [this.window1, this.window2, this.window3, this.window4];
 
+  // 집 몸체 생성
   public createBox() {
     const box = BABYLON.MeshBuilder.CreateBox('box', {
       size: 5,
@@ -111,6 +113,7 @@ export class AppComponent implements OnInit {
     return box;
   }
 
+  // 지붕 생성
   public createRoof() {
     const roof = BABYLON.MeshBuilder.CreateCylinder('roof', {
       diameter: 7,
@@ -131,6 +134,7 @@ export class AppComponent implements OnInit {
     return roof;
   }
 
+  // 지붕과 몸체를 Merge해서 하나의 메쉬를 만든다
   public createHouse() {
     const house = BABYLON.Mesh.MergeMeshes(
       [this.createBox(), this.createRoof()],
@@ -144,6 +148,7 @@ export class AppComponent implements OnInit {
     return house;
   }
 
+  // 집들을 만들어준다
   public createHouses() {
     for (let i = 0; i < 10; i++) {
       let house = this.createHouse();
@@ -157,29 +162,59 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // 메쉬를 가져와 화면에 띄워주기
-  public importMeshes1() {
-    BABYLON.SceneLoader.ImportMesh(
-      '',
-      'assets/lib/',
-      'shinwoo_level1.glb',
-      this.scene,
-      () => {}
-    );
+  // 자동차 만들기
+  public cteateCar() {
+    // base
+    const outline = [
+      new BABYLON.Vector3(-0.3, 0, -0.1),
+      new BABYLON.Vector3(0.2, 0, -0.1),
+    ];
+
+    // 앞 부분 구부리기
+    for (let i = 0; i < 20; i++) {
+      outline.push(
+        new BABYLON.Vector3(
+          0.2 * Math.cos((i * Math.PI) / 40),
+          0,
+          0.2 * Math.sin((i * Math.PI) / 40) - 0.1
+        )
+      );
+    }
+
+    // top
+    outline.push(new BABYLON.Vector3(0, 0, 0.1));
+    outline.push(new BABYLON.Vector3(-0.3, 0, 0.1));
+
+    const car = BABYLON.MeshBuilder.ExtrudePolygon('car', {
+      shape: outline,
+      depth: 0.2,
+    });
   }
 
-  public importMeshes2() {
-    BABYLON.SceneLoader.ImportMesh(
-      '',
-      'assets/lib/',
-      'shinwoo_level2.glb',
-      this.scene,
-      () => {}
-    );
-  }
+  // 메쉬를 가져와 화면에 띄워주기
+  // public importMeshes1() {
+  //   BABYLON.SceneLoader.ImportMesh(
+  //     '',
+  //     'assets/lib/',
+  //     'shinwoo_level1.glb',
+  //     this.scene,
+  //     () => {}
+  //   );
+  // }
+
+  // public importMeshes2() {
+  //   BABYLON.SceneLoader.ImportMesh(
+  //     '',
+  //     'assets/lib/',
+  //     'shinwoo_level2.glb',
+  //     this.scene,
+  //     () => {}
+  //   );
+  // }
   async ngOnInit() {
     this.runRenderLoop();
     this.createHouses();
+    // this.cteateCar();
     // this.importMeshes2();
     this.scene.createDefaultCamera(true, true, true);
   }

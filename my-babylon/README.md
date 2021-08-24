@@ -5,5 +5,6 @@
 ## 1.0 사용기술
 
 > TypeScript 4.1.5  
+> ES6/JS
 > @angular/cli 11.2.11  
 > BabylonJS 4.2.0
