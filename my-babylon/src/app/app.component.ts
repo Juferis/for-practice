@@ -48,8 +48,8 @@ export class AppComponent implements OnInit {
       scene
     ));
 
-    camera.speed = 1;
-    camera.inertia = 0.05;
+    camera.speed = 10;
+    camera.inertia = 0.2;
     camera.touchAngularSensibility = 0.001;
     camera.attachControl(this.canvas);
     console.log(camera.speed, camera.inertia, camera.touchAngularSensibility);
@@ -213,6 +213,6 @@ export class AppComponent implements OnInit {
     this.createHouses();
     // this.cteateCar();
     // this.importMeshes2();
-    this.scene.createDefaultCamera(false, true, true);
+    // this.scene.createDefaultCamera(false, true, true);
   }
 }
