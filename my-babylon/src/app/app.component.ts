@@ -44,13 +44,15 @@ export class AppComponent implements OnInit {
 
     const camera = (this.camera = new BABYLON.UniversalCamera(
       'camera',
-      BABYLON.Vector3.One(),
+      BABYLON.Vector3.One(), //카메라 시작 위치
       scene
     ));
 
-    camera.speed = 0.1;
-    camera.rotation = BABYLON.Vector3.Zero();
-    camera.attachControl();
+    camera.speed = 1;
+    camera.inertia = 0.05;
+    camera.touchAngularSensibility = 0.001;
+    camera.attachControl(this.canvas);
+    console.log(camera.speed, camera.inertia, camera.touchAngularSensibility);
 
     const light = new BABYLON.HemisphericLight(
       'light',
