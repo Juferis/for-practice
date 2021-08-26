@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import * as BABYLON from 'babylonjs';
+import * as GUI from 'babylonjs-gui';
 // 아래 친구는 로더이다 ImportMesh를 사용하기 위함
 import 'babylonjs-loaders';
 
@@ -43,9 +44,12 @@ export class AppComponent implements OnInit {
 
     const camera = (this.camera = new BABYLON.FreeCamera(
       'camera',
-      new BABYLON.Vector3(0, 50, 0),
+      new BABYLON.Vector3(0, 5, -10),
       scene
     ));
+    camera.inputs.addMouseWheel();
+    camera.setTarget(BABYLON.Vector3.Zero());
+    camera.attachControl(true);
 
     const light = new BABYLON.HemisphericLight(
       'light',
@@ -148,47 +152,37 @@ export class AppComponent implements OnInit {
     return house;
   }
 
+  // 패널을 만든다
+  public createPanel(house: any, i: number) {
+    const plane = BABYLON.Mesh.CreatePlane('panel', 5, this.scene);
+    plane.parent = house;
+    plane.position.y = 10.5;
+    plane.billboardMode = BABYLON.Mesh.BILLBOARDMODE_ALL; // 패널이 카메라를 바라본다.
+    const addText = GUI.AdvancedDynamicTexture.CreateForMesh(plane);
+    const btn = GUI.Button.CreateSimpleButton('btn1', `House_${i}`);
+    btn.width = 5;
+    btn.height = 0.5;
+    btn.color = 'white';
+    btn.fontSize = 200;
+    btn.background = 'green';
+    btn.onPointerClickObservable.add(() => {
+      alert(`this is House_${i}`);
+    });
+    addText.addControl(btn);
+  }
   // 집들을 만들어준다
   public createHouses() {
     for (let i = 0; i < 10; i++) {
       let house = this.createHouse();
       house!.position.z = i * -8;
       house!.position.x = -15;
+      this.createPanel(house, i);
     }
     for (let i = 0; i < 10; i++) {
       let house = this.createHouse();
       house!.position.z = i * -8;
       house!.position.x = 15;
     }
-  }
-
-  // 자동차 만들기
-  public cteateCar() {
-    // base
-    const outline = [
-      new BABYLON.Vector3(-0.3, 0, -0.1),
-      new BABYLON.Vector3(0.2, 0, -0.1),
-    ];
-
-    // 앞 부분 구부리기
-    for (let i = 0; i < 20; i++) {
-      outline.push(
-        new BABYLON.Vector3(
-          0.2 * Math.cos((i * Math.PI) / 40),
-          0,
-          0.2 * Math.sin((i * Math.PI) / 40) - 0.1
-        )
-      );
-    }
-
-    // top
-    outline.push(new BABYLON.Vector3(0, 0, 0.1));
-    outline.push(new BABYLON.Vector3(-0.3, 0, 0.1));
-
-    const car = BABYLON.MeshBuilder.ExtrudePolygon('car', {
-      shape: outline,
-      depth: 0.2,
-    });
   }
 
   // 메쉬를 가져와 화면에 띄워주기
