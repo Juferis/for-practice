@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   public canvas!: HTMLCanvasElement;
   public engine!: BABYLON.Engine;
   public scene!: BABYLON.Scene;
-  public camera!: BABYLON.FreeCamera;
+  public camera!: BABYLON.UniversalCamera;
 
   @ViewChild('rendererCanvas', { static: true })
   public rendererCanvas!: ElementRef<HTMLCanvasElement>;
@@ -42,14 +42,15 @@ export class AppComponent implements OnInit {
     //   autoplay: true,
     // });
 
-    const camera = (this.camera = new BABYLON.FreeCamera(
+    const camera = (this.camera = new BABYLON.UniversalCamera(
       'camera',
-      new BABYLON.Vector3(0, 5, -10),
+      BABYLON.Vector3.One(),
       scene
     ));
-    camera.inputs.addMouseWheel();
-    camera.setTarget(BABYLON.Vector3.Zero());
-    camera.attachControl(true);
+
+    camera.speed = 0.1;
+    camera.rotation = BABYLON.Vector3.Zero();
+    camera.attachControl();
 
     const light = new BABYLON.HemisphericLight(
       'light',
@@ -210,6 +211,6 @@ export class AppComponent implements OnInit {
     this.createHouses();
     // this.cteateCar();
     // this.importMeshes2();
-    this.scene.createDefaultCamera(true, true, true);
+    this.scene.createDefaultCamera(false, true, true);
   }
 }
