@@ -1,1 +1,11 @@
-<div><canvas #rendererCanvas id="renderCanvas"></canvas></div>
+<div id="canvasDiv"><canvas #rendererCanvas id="renderCanvas"></canvas></div>
+<div>
+  <input
+    (input)="rangeHandler($event)"
+    type="range"
+    min="5"
+    max="10"
+    value="5"
+    step="0.1"
+  />
+</div>
