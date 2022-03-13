@@ -6,6 +6,9 @@ config.loadFromPath('./config.json');
 
 const cognitoIdentityServiceProvider = new CognitoIdentityServiceProvider();
 
+const loginBtn = document.getElementById('loginBtn');
+const signUpBtn = document.getElementById('signUpBtn');
+
 const params = {
   ClientId: '6ci3hqok0eektiaXXXXXXXXXXX',
   Password: '123456',
@@ -24,3 +27,15 @@ cognitoIdentityServiceProvider.signUp(params, function (err, data) {
     console.log(data);
   }
 });
+
+function signUp() {
+  const emailInput = document.getElementById('email');
+  const passInput = document.getElementById('password');
+  console.log('sig');
+}
+
+function init() {
+  loginBtn.addEventListener('click', signUp);
+}
+
+init();

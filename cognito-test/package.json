@@ -4,11 +4,13 @@
   "description": "test for aws cognito",
   "main": "index.js",
   "scripts": {
+    "start": "index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Juferis",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.1092.0"
-  }
+  },
+  "type": "module"
 }
